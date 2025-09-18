@@ -9,23 +9,26 @@ UNIR.TV es un proyecto de televisión digital que incluye el desarrollo de una p
 ## 📊 Contenido del Repositorio
 
 ### Archivos Principales
+
 - **`gantt_unirtv.html`** - Diagrama de Gantt interactivo del cronograma del proyecto
 - **`Cronograma UNIR TV.xlsx`** - Datos fuente del cronograma en formato Excel
 - **`organigrama_unirtv.png`** - Organigrama del equipo en formato PNG
 - **`organigrama_unirtv.svg`** - Organigrama del equipo en formato vectorial
 
 ### Scripts de Generación
+
 - **`Gantt UNIR TV.r`** - Script R para generar el diagrama de Gantt interactivo
 - **`Gantt UNIR TV con equipo.r`** - Versión alternativa del script con información del equipo
 - **`Organigrama.r`** - Script R para generar el organigrama del equipo
 
 ### Recursos
+
 - **`favicon-unir.png`** - Favicon personalizado de UNIR
 
 ## 🚀 Visualización en Vivo
 
 El diagrama de Gantt interactivo está disponible en GitHub Pages:
-**[Ver Cronograma UNIR.TV](https://tu-usuario.github.io/cronograma-unirtv/gantt_unirtv.html)**
+**[Ver Cronograma UNIR.TV](https://javicanton.github.io/cronograma-unirtv/gantt_unirtv.html)**
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -46,34 +49,42 @@ El diagrama de Gantt interactivo está disponible en GitHub Pages:
 ## 👥 Estructura del Equipo
 
 ### Área de Contenidos
+
 - **Responsable**: Inma Berlanga
 - **Miembros**: Alicia Moreno, Isabel de Azcárraga, Pavel Sidorenko
 
 ### Área de Desarrollo
+
 - **Responsable**: Isabel de Azcárraga
 - **Miembros**: Rubén Ortega, Brenda Vázquez
 
 ### Área de Comunicación
+
 - **Responsable**: Pavel Sidorenko
 - **Miembros**: María Abellán, Javi Cantón
 
 ### Área de Investigación
+
 - **Miembros**: Todo el equipo participa en actividades de investigación
 
 ## 🔧 Cómo Usar
 
 ### Visualización
+
 1. Abre el archivo `gantt_unirtv.html` en tu navegador web
 2. Utiliza las herramientas de zoom y pan para navegar por el cronograma
 3. Pasa el cursor sobre las tareas para ver detalles específicos
 
 ### Regeneración de Gráficos
+
 1. Instala las dependencias de R necesarias:
+
    ```r
    install.packages(c("readxl", "dplyr", "plotly", "lubridate", "ggplot2", "stringr", "ggtext", "svglite", "htmlwidgets"))
    ```
 
 2. Ejecuta los scripts R para regenerar las visualizaciones:
+
    ```r
    # Para el diagrama de Gantt
    source("Gantt UNIR TV.r")
@@ -85,6 +96,7 @@ El diagrama de Gantt interactivo está disponible en GitHub Pages:
 ## 📝 Actualización de Datos
 
 Para actualizar el cronograma:
+
 1. Modifica el archivo `Cronograma UNIR TV.xlsx`
 2. Ejecuta el script `Gantt UNIR TV.r`
 3. El archivo HTML se actualizará automáticamente
@@ -92,6 +104,7 @@ Para actualizar el cronograma:
 ## 🎨 Personalización
 
 Los scripts R incluyen variables de configuración para personalizar:
+
 - Colores de las categorías
 - Tamaños de fuente
 - Espaciado y márgenes
@@ -105,6 +118,7 @@ Este proyecto es propiedad de UNIR (Universidad Internacional de La Rioja) y est
 ## 🤝 Contribuciones
 
 Para contribuir al proyecto:
+
 1. Haz fork del repositorio
 2. Crea una rama para tu contribución
 3. Realiza los cambios necesarios
