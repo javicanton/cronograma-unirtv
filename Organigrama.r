@@ -3,8 +3,15 @@ library(dplyr)
 library(stringr)
 library(ggtext)
 library(svglite)
+library(rstudioapi)
 
-setwd("/Users/javiercanton/Library/CloudStorage/OneDrive-UNIR/UNIR/TV-UNIR")
+# Obtener el directorio donde se encuentra este script
+script_dir <- dirname(rstudioapi::getActiveDocumentContext()$path)
+if (script_dir == "") {
+  # Si no se puede obtener el directorio del script, usar el directorio de trabajo actual
+  script_dir <- getwd()
+}
+setwd(script_dir)
 
 # ================== DATOS EDITABLES ==================
 areas <- list(
@@ -174,7 +181,17 @@ g <- ggplot() +
 g
 
 # ======= EXPORTAR =======
-svglite::svglite("organigrama_unirtv.svg", width = 12, height = 7.5)
+svg_file <- "organigrama_unirtv.svg"
+png_file <- "organigrama_unirtv.png"
+
+svglite::svglite(svg_file, width = 12, height = 7.5)
 print(g)
 dev.off()
-ggsave("organigrama_unirtv.png", g, width = 12, height = 7.5, dpi = 300)
+ggsave(png_file, g, width = 12, height = 7.5, dpi = 300)
+
+# Mostrar información sobre los archivos generados
+cat("✅ Organigrama generado exitosamente\n")
+cat("📁 Directorio:", getwd(), "\n")
+cat("📄 Archivos generados:\n")
+cat("   -", svg_file, "\n")
+cat("   -", png_file, "\n")
