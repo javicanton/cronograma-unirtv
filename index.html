@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronograma UNIR.TV</title>
+    <link rel="icon" type="image/png" href="favicon-unir.png">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 40px;
+            text-align: center;
+            max-width: 600px;
+            margin: 20px;
+        }
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: #f8f9fa;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #667eea;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.2em;
+        }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 10px;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .features {
+            margin-top: 30px;
+            text-align: left;
+        }
+        .feature {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            color: #555;
+        }
+        .feature-icon {
+            width: 20px;
+            height: 20px;
+            background: #667eea;
+            border-radius: 50%;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+        }
+        .footer {
+            margin-top: 30px;
+            color: #999;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">📺</div>
+        <h1>Cronograma UNIR.TV</h1>
+        <p class="subtitle">Visualización interactiva del proyecto de televisión digital</p>
+        
+        <a href="gantt_unirtv.html" class="btn">Ver Cronograma Interactivo</a>
+        <a href="https://github.com/tu-usuario/cronograma-unirtv" class="btn" target="_blank">Ver en GitHub</a>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">📊</div>
+                <span>Diagrama de Gantt interactivo con zoom y pan</span>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">👥</div>
+                <span>Organigrama del equipo de desarrollo</span>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📅</div>
+                <span>Cronograma detallado por áreas y hitos</span>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔄</div>
+                <span>Actualización automática desde Excel</span>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Proyecto desarrollado por el equipo UNIR.TV</p>
+            <p>Universidad Internacional de La Rioja</p>
+        </div>
+    </div>
+</body>
+</html>
