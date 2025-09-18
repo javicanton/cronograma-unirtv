@@ -16,7 +16,7 @@ areas <- list(
   ),
   list(
     titulo = "ÁREA DE DESARROLLO",
-    responsable = "Isabez de Azcárraga",
+    responsable = "Isabel de Azcárraga",
     miembros = c("Rubén Ortega", "Brenda Vázquez"),
     color = "#8DA0CB"  # Desarrollo (azul)
   ),
