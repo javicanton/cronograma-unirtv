@@ -2,9 +2,16 @@ library(readxl)
 library(dplyr)
 library(plotly)
 library(lubridate)
+library(rstudioapi)
 
 # ---- Ruta ----
-xlsx_path <- "/Users/javiercanton/Library/CloudStorage/OneDrive-UNIR/UNIR/TV-UNIR/Cronograma UNIR TV.xlsx"
+# Obtener el directorio donde se encuentra este script
+script_dir <- dirname(rstudioapi::getActiveDocumentContext()$path)
+if (script_dir == "") {
+  # Si no se puede obtener el directorio del script, usar el directorio de trabajo actual
+  script_dir <- getwd()
+}
+xlsx_path <- file.path(script_dir, "Cronograma UNIR TV.xlsx")
 
 # ---- Lectura y normalización ----
 df0 <- read_excel(xlsx_path) %>%
@@ -185,9 +192,8 @@ p <- p %>%
 p
 
 # ---- Exportar a HTML ----
-# Obtener directorio de trabajo basado en la ruta del Excel
-output_dir <- dirname(xlsx_path)
-html_file <- file.path(output_dir, "gantt_unirtv.html")
+# Usar el directorio del script para guardar los archivos
+html_file <- file.path(script_dir, "gantt_unirtv.html")
 
 # Exportar el gráfico a HTML en la misma carpeta con título personalizado
 htmlwidgets::saveWidget(
@@ -198,7 +204,7 @@ htmlwidgets::saveWidget(
 )
 
 # Añadir favicon personalizado (favicon-unir.png)
-favicon_path <- file.path(output_dir, "favicon-unir.png")
+favicon_path <- file.path(script_dir, "favicon-unir.png")
 if(file.exists(favicon_path)) {
   # Leer el HTML generado
   html_content <- readLines(html_file)
@@ -224,7 +230,7 @@ if(file.exists(favicon_path)) {
 }
 
 # Añadir organigrama del equipo al HTML (embebido como base64)
-organigrama_path <- file.path(output_dir, "organigrama_unirtv.png")
+organigrama_path <- file.path(script_dir, "organigrama_unirtv.png")
 if(file.exists(organigrama_path)) {
   # Leer el HTML generado
   html_content <- readLines(html_file)
@@ -276,5 +282,7 @@ if(file.exists(organigrama_path)) {
   cat("💡 Para añadir organigrama: coloca 'organigrama_unirtv.png' en la carpeta del proyecto\n")
 }
 
-cat("Gráfico exportado como:", html_file, "\n")
-cat("Abre el HTML en tu navegador para visualizar y editar\n")
+cat("✅ Diagrama de Gantt con equipo generado exitosamente\n")
+cat("📁 Directorio:", script_dir, "\n")
+cat("📄 Archivo generado:", basename(html_file), "\n")
+cat("🌐 Abre el HTML en tu navegador para visualizar y editar\n")
